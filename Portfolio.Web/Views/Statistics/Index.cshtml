@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "İstatistikler";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="mb-2 f-w-400 text-muted">Proje Sayısı</h6>
+                <h4 class="mb-3">
+                    @ViewBag.projectCount
+                </h4>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="mb-2 f-w-400 text-muted">Yetenek Ortalaması</h6>
+                <h4 class="mb-3">
+                    @ViewBag.skillAverage
+                </h4>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="mb-2 f-w-400 text-muted">Okunmamış Mesaj Sayısı</h6>
+                <h4 class="mb-3">
+                    @ViewBag.unreadMessageCount
+                </h4>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="mb-2 f-w-400 text-muted">Son Mesaj Gönderen Kişi</h6>
+                <h4 class="mb-3">
+                    @ViewBag.lastMessageOwner
+                </h4>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-primary">
+            <div class="card-body">
+                <h3 class="text-white m-0">@ViewBag.experienceYear</h3>
+                <span class="m-t-10">Deneyim Yılı</span>
+                <i class="fa fa-suitcase"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-info">
+            <div class="card-body">
+                <h3 class="text-white m-0">@ViewBag.companyCount</h3>
+                <span class="m-t-10">Çalıştığım Toplam Şirket</span>
+                <i class="fa fa-building"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-dark">
+            <div class="card-body">
+                <h3 class="text-white m-0">@ViewBag.reviewAverage</h3>
+                <span class="m-t-10">Değerlendirme Ortalamam</span>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-danger">
+            <div class="card-body">
+                <h3 class="text-white m-0">@ViewBag.maxReviewOwner</h3>
+                <span class="m-t-10">En Yüksek Değerlendirme Yapan</span>
+                <i class="fa fa-user"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-success">
+            <div class="card-body">
+                <h3 class="text-white m-0">@ViewBag.trueMessage</h3>
+                <span class="m-t-10">Okunmuş Mesaj Sayısı</span>
+                <i class="fa fa-envelope-open"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-warning">
+            <div class="card-body">
+                <h3 class="text-white m-0">@ViewBag.falseMessage</h3>
+                <span class="m-t-10">Okunmamış Mesaj Sayısı</span>
+                <i class="fa fa-envelope"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-info">
+            <div class="card-body">
+                <h3 class="text-white m-0">@ViewBag.educationCount</h3>
+                <span class="m-t-10">Eğitim Sayısı</span>
+                <i class="fa fa-graduation-cap"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-primary">
+            <div class="card-body">
+                <h3 class="text-white m-0">@ViewBag.userCount</h3>
+                <span class="m-t-10">Kullanıcı Sayısı</span>
+                <i class="fa fa-users"></i>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+﻿
+@*
+    default stats component view
+*@
+<section id="stats" class="stats section">
+
+   
+    <div class="container section-title" data-aos="fade-up">
+        <h2>İstatistikler</h2>
+        
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item text-center w-100 h-100">
+                    <span data-purecounter-start="0" data-purecounter-end="@ViewBag.projectCount" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Projelerim</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item text-center w-100 h-100">
+                    <span data-purecounter-start="0" data-purecounter-end="@ViewBag.skillCount" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Yeteneklerim</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item text-center w-100 h-100">
+                    <span data-purecounter-start="0" data-purecounter-end="@ViewBag.educationCount" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Eğitim</p>
+                </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item text-center w-100 h-100">
+                    <span data-purecounter-start="0" data-purecounter-end="@ViewBag.testimonialCount" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Referanslarım</p>
+                </div>
+            </div>
+
+           
+
+           
+            
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

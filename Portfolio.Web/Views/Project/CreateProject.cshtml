@@ -1,0 +1,41 @@
+﻿@model Project
+@{
+    ViewData["Title"] = "Yeni Proje Oluştur";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form method="post">
+    <div class="form-group">
+        <label>Proje Görsel URL</label>
+        <input type="text" class ="form-control" asp-for="ImageUrl"/>
+        <span class="test-danger " asp-validation-for="ImageUrl"/>
+    </div>
+    <div class="form-group">
+        <label>Proje Adı</label>
+        <input type="text" class="form-control" asp-for="ProjectName" />
+        <span class="text-danger " asp-validation-for="ProjectName" />
+    </div>
+    <div
+        class="form-group">
+        <label>Proje Açıklaması</label>
+        <textarea type="text" class="form-control" asp-for="Description" rows="3" > </textarea>
+        <span class="text-danger " asp-validation-for="Description" "  />
+
+    </div>
+    <div
+        class="form-group">
+        <label>GithubURL</label>
+        <input type="Url" class="form-control" asp-for="GithubUrl" />
+        <span class="text-danger " asp-validation-for="GithubUrl" />
+    </div>
+    <div
+        class="form-group">
+        <label>Kategori</label>
+        <select class="form-control" asp-for="CategoryId" asp-items="@ViewBag.Categories">
+            <option disabled selected>Kategori Seçiniz</option>
+            </select>
+        <span class="text-danger " asp-validation-for="CategoryId" />
+    </div>
+    <button class="btn btn-outline-primary">kaydet</button>
+</form>
+
