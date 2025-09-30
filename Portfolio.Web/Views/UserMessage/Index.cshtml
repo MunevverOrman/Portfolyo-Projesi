@@ -1,0 +1,90 @@
+﻿@model List<UserMessage>
+@{
+    ViewData["Title"] = "Gelen Mesajlar";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+
+<div class="card-body">
+    <div class="card-sub">
+        Mesaj İşlemleri
+    </div>
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Gönderen</th>
+                <th scope="col">Konu</th>
+                <th scope="col">Tarih</th>
+                <th scope="col">Mesaj Detayı</th>
+                <th scope="col">Durum</th>
+                <th scope="col">İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <th>@count</th>
+                    <td>@item.Name</td>
+                    <td>@item.Subject</td>
+                    <td>27.09.2025</td>
+
+
+                    <td>
+                        <a href="/UserMessage/MessageDetail/@item.UserMessageId" class="btn btn-warning">Mesajı Aç</a>
+                    </td>
+                    <td>
+                        @if (item.IsRead)
+                        {
+                            <a href="/UserMessage/ChangeIsReadToFalse/@item.UserMessageId" class="btn btn-dark">
+                                Okundu
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="/UserMessage/ChangeIsReadToTrue/@item.UserMessageId" class="btn btn-info">
+                                Okunmadı
+                            </a>
+                        }
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-delete-message" data-id="@item.UserMessageId">
+                            Sil
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<a href="/UserMessage/CreateUserMessage/" class="btn btn-outline-primary">Yeni Mesaj Oluştur</a>
+
+
+    <script>
+        // Tüm sil butonlarını seç
+        document.querySelectorAll('.btn-delete-message').forEach(button => {
+            button.addEventListener('click', function () {
+                var id = this.getAttribute('data-id'); // mesaj ID'si
+
+                Swal.fire({
+                    title: 'Emin misiniz?',
+                    text: "Bu mesaj kalıcı olarak silinecek!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Evet, sil!',
+                    cancelButtonText: 'İptal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Mesajı silme linkine yönlendir
+                        window.location.href = '/UserMessage/DeleteUserMessage/' + id;
+                    }
+                });
+            });
+        });
+    </script>
+}

@@ -1,0 +1,50 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Kullanıcı bilgileri Güncelle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+
+            <input type="hidden" asp-for="UserId" />
+
+            <div class="form-group">
+                <label for="Name">Adınız</label>
+                <input type="text" class="form-control" asp-for="FirstName" id="Name">
+            </div>
+
+            <div class="form-group">
+                <label for="Username">Kullanıcı Adınız</label>
+                <input type="text" class="form-control" asp-for="UserName" id="UserName">
+            </div>
+
+            <div class="form-group">
+                <label for="CurrentPassword">Mevcut Şifre</label>
+                <input type="password" class="form-control" name="currentPassword" id="CurrentPassword">
+             
+                @if (ViewData.ModelState.ContainsKey("PasswordError"))
+                {
+                    <span class="text-danger">
+                        @ViewData.ModelState["PasswordError"].Errors.First().ErrorMessage
+                    </span>
+                }
+            </div>
+
+            <div class="form-group">
+                <label for="NewPassword">Yeni Şifre</label>
+                <input type="password" class="form-control" name="newPassword" id="NewPassword">
+            </div>
+
+            <div class="form-group">
+                <label for="ConfirmPassword">Yeni Şifre (Onay)</label>
+                <input type="password" class="form-control" name="confirmPassword" id="ConfirmPassword">
+            </div>
+
+            <div class="card-action">
+                <button class="btn btn-outline-success">Bilgileri Güncelle</button>
+            </div>
+
+        </form>
+    </div>
+</div>

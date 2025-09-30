@@ -1,0 +1,29 @@
+﻿@model List<User>
+@{
+    ViewData["Title"] = "Kullanıcı Bilgileri";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Adınız</th>
+        <th>Kullanıcı Adı</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.FirstName</td> 
+            <td>@item.UserName</td>
+            <td>
+                <a href="/Setting/UpdateUser/@item.UserId" class="btn btn-outline-info">Güncelle</a>
+            </td>
+        </tr>
+    }
+
+</table>

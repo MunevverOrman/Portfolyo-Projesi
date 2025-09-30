@@ -1,26 +1,20 @@
-﻿
-@*
-   default resume component
-*@
-
-<section id="resume" class="resume section">
+﻿<section id="resume" class="resume section">
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
         <h2>Özgeçmiş</h2>
-        <p>Eğitim bilgilerim hakkında daha fazla</p>
+        <p>Eğitim ve deneyim bilgilerim hakkında daha fazla</p>
     </div><!-- End Section Title -->
 
     <div class="container">
-
         <div class="row">
-
-         @await Component.InvokeAsync("_DefaultEducationComponent")
-
-         @await Component.InvokeAsync("_DefaultExperienceComponent")
-
+            <div class="col-lg-6">
+                @await Component.InvokeAsync("_DefaultEducationComponent")
+            </div>
+            <div class="col-lg-6">
+                @await Component.InvokeAsync("_DefaultExperienceComponent")
+            </div>
         </div>
-
     </div>
 
 </section>

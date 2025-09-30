@@ -3,11 +3,12 @@
    Default Social Media Component View
 *@
 
-<div class="social-icons">
+<div class="social-icons d-flex justify-content-center align-items-center">
     @foreach (var item in Model)
     {
-        <a href="@item.ProfileUrl" target="_blank" class="ms-2">
+        <a href="@item.ProfileUrl" target="_blank" class="mx-2">
             <i class="@item.PlatformIcon"></i>
         </a>
     }
 </div>
+
